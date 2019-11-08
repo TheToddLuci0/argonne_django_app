@@ -1,0 +1,8 @@
+{% extends 'root.html' %}
+
+{% block app %}
+<h3>hmi</h3>
+<center>
+  <iframe style="width:1200px; height: 800px;" src="http://{{ hmi }}:6080/vnc_lite.html"></iframe>
+</center>
+{% endblock %}
