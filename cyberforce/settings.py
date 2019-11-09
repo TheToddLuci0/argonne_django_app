@@ -20,12 +20,12 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/1.11/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '6n5_y@(ttczn0w6=9n^r*wltqoqt=^!boa!hy=%hvb_s9@rv-+'
+SECRET_KEY = 'CHANGE_ME'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['www.isucdc.com']
 
 
 # Application definition
@@ -119,7 +119,9 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 
 STATIC_URL = '/static/'
+TEAM = 36
 
-from netifaces import AF_INET
-import netifaces as ni
-TEAM = ni.ifaddresses('eth0')[AF_INET][0]['addr'].split('.')[2]
+try:
+    from .local_settings import *
+except Exception:
+    pass
