@@ -15,10 +15,12 @@ Including another URLconf
 """
 from django.conf.urls import url
 from django.contrib import admin
+from django.urls import path, include
 
 import home.views
 
 urlpatterns = [
+    path('accounts/', include('django.contrib.auth.urls')),
     url(r'^admin', admin.site.urls),
     url(r'^mail', home.views.mail),
     url(r'^hmi', home.views.hmi),
@@ -26,3 +28,4 @@ urlpatterns = [
     url(r'^files', home.views.files),
     url(r'^$', home.views.index),
 ]
+
