@@ -133,10 +133,10 @@ LOGGING = {
 
 AUTHENTICATION_BACKENDS = ["django_auth_ldap.backend.LDAPBackend"]
 AUTH_LDAP_SERVER_URI = "ldap://10.0.36.5"
-AUTH_LDAP_BIND_DN = "uid=admin,ou=people,dc=isucdc,dc=com"
+AUTH_LDAP_BIND_DN = "cn=admin,ou=people,dc=isucdc,dc=com"
 AUTH_LDAP_BIND_PASSWORD = ""
 AUTH_LDAP_USER_SEARCH = LDAPSearch(
-    "ou=people,dc=isucdc,dc=com", ldap.SCOPE_SUBTREE, "(uid=%(user)s)"
+    "ou=people,dc=isucdc,dc=com", ldap.SCOPE_SUBTREE, "(cn=%(user)s)"
 )
 
 LOGIN_REDIRECT_URL = '/'
