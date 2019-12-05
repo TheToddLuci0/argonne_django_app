@@ -1,4 +1,4 @@
-Django==2.2.7
+Django==2.2.8
 django-auth-ldap==2.0.0
 netifaces==0.10.9
 pyasn1==0.4.7
